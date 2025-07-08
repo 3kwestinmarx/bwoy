@@ -84,9 +84,15 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+    // Only use HTTPS redirection in production
+    // In development, we'll handle both HTTP and HTTPS
 }
-
-app.UseHttpsRedirection();
+else
+{
+    // Use HTTPS redirection only in production
+    app.UseHttpsRedirection();
+}
 
 // Enable static file serving for uploaded files
 app.UseStaticFiles();

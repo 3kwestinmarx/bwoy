@@ -6,7 +6,7 @@ interface User {
   id: string;
   email: string;
   fullName: string;
-  createdAt: string;
+  created_at: string;
 }
 
 interface AuthContextType {
@@ -59,8 +59,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         console.error('Error initializing auth:', error);
         // Clear any invalid stored data
         apiService.logout();
-      } finally {
-        setLoading(false);
+        setUser(null);
       }
     };
 
@@ -85,7 +84,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Set the authenticated user
       setUser(response.user);
     } catch (error: any) {
-      throw new Error(error.message || 'Registration failed');
+      throw error;
     } finally {
       setLoading(false);
     }
@@ -107,7 +106,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Set the authenticated user
       setUser(response.user);
     } catch (error: any) {
-      throw new Error(error.message || 'Login failed');
+      throw error;
     } finally {
       setLoading(false);
     }
@@ -117,15 +116,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
    * Sign out the current user
    */
   const signOut = async (): Promise<void> => {
-    setLoading(true);
     try {
       // Clear authentication data
       apiService.logout();
       setUser(null);
     } catch (error: any) {
-      throw new Error(error.message || 'Logout failed');
+      console.error('Logout error:', error);
+      // Even if there's an error, clear the user state
+      setUser(null);
     } finally {
-      setLoading(false);
+      // Don't set loading to false here as it's not needed for logout
     }
   };
 

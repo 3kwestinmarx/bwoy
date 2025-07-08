@@ -153,7 +153,7 @@ class ApiService {
       
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Login failed');
+      throw new Error(error.response?.data?.message || error.message || 'Login failed');
     }
   }
 
@@ -172,7 +172,7 @@ class ApiService {
       
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Registration failed');
+      throw new Error(error.response?.data?.message || error.message || 'Registration failed');
     }
   }
 
@@ -222,7 +222,7 @@ class ApiService {
       const response: AxiosResponse<Book[]> = await this.api.get(`/books?${params.toString()}`);
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to fetch books');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to fetch books');
     }
   }
 
@@ -244,7 +244,7 @@ class ApiService {
       const response: AxiosResponse<Book[]> = await this.api.get(`/books/my-books?${params.toString()}`);
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to fetch your books');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to fetch your books');
     }
   }
 
@@ -258,7 +258,7 @@ class ApiService {
       const response: AxiosResponse<Book> = await this.api.get(`/books/${id}`);
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to fetch book');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to fetch book');
     }
   }
 
@@ -272,7 +272,7 @@ class ApiService {
       const response: AxiosResponse<Book> = await this.api.post('/books', bookData);
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to create book');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to create book');
     }
   }
 
@@ -287,7 +287,7 @@ class ApiService {
       const response: AxiosResponse<Book> = await this.api.put(`/books/${id}`, bookData);
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to update book');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to update book');
     }
   }
 
@@ -300,7 +300,7 @@ class ApiService {
     try {
       await this.api.delete(`/books/${id}`);
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to delete book');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to delete book');
     }
   }
 
@@ -313,7 +313,7 @@ class ApiService {
       const response: AxiosResponse<string[]> = await this.api.get('/books/categories');
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to fetch categories');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to fetch categories');
     }
   }
 
@@ -341,7 +341,7 @@ class ApiService {
 
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to upload image');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to upload image');
     }
   }
 
@@ -367,7 +367,7 @@ class ApiService {
 
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to upload book file');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to upload book file');
     }
   }
 
@@ -381,7 +381,7 @@ class ApiService {
     try {
       await this.api.delete(`/files/delete/${fileType}/${fileName}`);
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to delete file');
+      throw new Error(error.response?.data?.message || error.message || 'Failed to delete file');
     }
   }
 
