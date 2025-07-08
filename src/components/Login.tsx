@@ -47,7 +47,7 @@ const Login: React.FC = () => {
         setConfirmPassword('');
       } else {
         await signIn(email, password);
-        navigate('/dashboard');
+        navigate('/writers');
       }
     } catch (err: any) {
       setError(err.message || 'Authentication failed. Please try again.');
