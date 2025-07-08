@@ -316,6 +316,4 @@ The React frontend uses modern patterns:
 ## License
 
 This project is licensed under the MIT License.
-=======
-# bwoy
->>>>>>> b587c53ee4b9d048ce5e04c1b91143fe89f91854
+
