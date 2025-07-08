@@ -8,6 +8,12 @@ using BookStore.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+app = builder.Build();
+
+app.UseCors("AllowFrontend");
+
+
 // Add services to the container.
 builder.Services.AddControllers();
 

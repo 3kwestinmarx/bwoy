@@ -113,3 +113,4 @@ C:\Users\kjay computers\Downloads\project-bolt-github-vcobgkhd\project\backend\B
 C:\Users\kjay computers\Downloads\project-bolt-github-vcobgkhd\project\backend\BookStore.API\obj\Debug\net8.0\ref\BookStore.API.dll
 C:\Users\kjay computers\Downloads\project-bolt-github-vcobgkhd\project\backend\BookStore.API\bin\Debug\net8.0\properties\launchsetting.json
 C:\Users\kjay computers\Downloads\project-bolt-github-vcobgkhd\project\backend\BookStore.API\bin\Debug\net8.0\BookStore.API.staticwebassets.runtime.json
+C:\Users\kjay computers\Downloads\project-bolt-github-vcobgkhd\project\backend\BookStore.API\obj\Debug\net8.0\BookStore.API.sourcelink.json
