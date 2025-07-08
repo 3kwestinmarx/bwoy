@@ -19,8 +19,8 @@ const Navbar: React.FC = () => {
   };
 
   const getUserDisplayName = () => {
-    if (user?.user_metadata?.full_name) {
-      return user.user_metadata.full_name;
+    if (user?.fullName) {
+      return user.fullName;
     }
     return user?.email?.split('@')[0] || 'User';
   };
