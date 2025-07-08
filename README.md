@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Book Store Application
 
 A modern web application for buying, selling, and managing digital books. Built with React, TypeScript frontend and .NET Core Web API backend.
@@ -315,3 +316,6 @@ The React frontend uses modern patterns:
 ## License
 
 This project is licensed under the MIT License.
+=======
+# bwoy
+>>>>>>> b587c53ee4b9d048ce5e04c1b91143fe89f91854
